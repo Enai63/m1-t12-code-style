@@ -7,8 +7,8 @@ public class CalculateDeposit {
         return round(pay);
     }
 
-    double calculateSimplePercentFunction(double doubleAmount, int depositPeriod) {
-        return round(doubleAmount + doubleAmount * 0.06 * depositPeriod);
+    double calculateSimplePercentFunction(double amount, int depositPeriod) {
+        return round(amount + amount * 0.06 * depositPeriod);
     }
 
     double round(double value) {
@@ -20,7 +20,7 @@ public class CalculateDeposit {
         int period;
         int action;
         int amount;
-        double outDoubleVar = 0;
+        double outVariable = 0;
 
         Scanner scanner = new Scanner(System.in);
 
@@ -34,11 +34,11 @@ public class CalculateDeposit {
         action = scanner.nextInt();
 
         if (action == 1) {
-            outDoubleVar = calculateSimplePercentFunction(amount, period);
+            outVariable = calculateSimplePercentFunction(amount, period);
         } else if (action == 2) {
-            outDoubleVar = calculateComplexPercentFunction(amount, period);
+            outVariable = calculateComplexPercentFunction(amount, period);
         }
-        System.out.println("Результат вклада: " + amount + " за " + period + " лет превратятся в " + outDoubleVar);
+        System.out.println("Результат вклада: " + amount + " за " + period + " лет превратятся в " + outVariable);
     }
 
     public static void main(String[] args) {
