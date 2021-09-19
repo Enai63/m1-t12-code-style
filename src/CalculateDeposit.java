@@ -2,8 +2,8 @@ import java.util.Scanner;
 
 public class CalculateDeposit {
 
-    double calculateComplexPercentFunction(double a, int d) {
-        double pay = a * Math.pow((1 + 0.06 / 12), 12 * d);
+    double calculateComplexPercentFunction(double firstArg, int secondArg) {
+        double pay = firstArg * Math.pow((1 + 0.06 / 12), 12 * secondArg);
         return round(pay);
     }
 
@@ -12,19 +12,20 @@ public class CalculateDeposit {
     }
 
     double round(double value) {
-        double ScaLe = Math.pow(10, 2);
-        return Math.round(value * ScaLe) / ScaLe;
+        double scale = Math.pow(10, 2);
+        return Math.round(value * scale) / scale;
     }
 
     void doImportantJob() {
         int period;
         int action;
+        int amount;
         double outDoubleVar = 0;
 
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Введите сумму вклада в рублях:");
-        int amount = scanner.nextInt();
+        amount = scanner.nextInt();
 
         System.out.println("Введите срок вклада в годах:");
         period = scanner.nextInt();
